@@ -10,7 +10,7 @@ import SwiftUI
 
 struct PokemonInfoRow: View {
     let model: PokemonViewModel
-    @State var expanded: Bool
+    let expanded: Bool
 
     var body: some View {
         VStack {
@@ -70,18 +70,18 @@ struct PokemonInfoRow: View {
             }
         )
         .padding(.horizontal)
-        .animation(
-            .spring(
-                response: 0.55,
-                dampingFraction: 0.425,
-                blendDuration: 0
-            )
-        )
-        .onTapGesture {
-            withAnimation {
-                self.expanded.toggle()
-            }
-        }
+//        .animation(
+//            .spring(
+//                response: 0.55,
+//                dampingFraction: 0.425,
+//                blendDuration: 0
+//            )
+//        )
+//        .onTapGesture {
+//            withAnimation {
+//                self.expanded.toggle()
+//            }
+//        }
     }
 }
 
