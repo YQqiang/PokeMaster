@@ -32,5 +32,12 @@ struct PokemonList: View {
                 }
             }
         }
+        .overlay(
+            VStack {
+                Spacer()
+                PokemonInfoPanel(model: .sample(id: 1))
+            }
+        )
+        .edgesIgnoringSafeArea(.bottom)
     }
 }
