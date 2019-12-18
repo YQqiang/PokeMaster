@@ -96,6 +96,7 @@
 		2F13939E23A9AC4B0077F44E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F13939D23A9AC4B0077F44E /* Settings.swift */; };
 		2F1393A223A9DAE00077F44E /* SettingRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1393A123A9DAE00077F44E /* SettingRootView.swift */; };
 		2F38936623A9F882007C40FD /* PokemonRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F38936523A9F882007C40FD /* PokemonRootView.swift */; };
+		2F38936823A9FAA0007C40FD /* MainTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F38936723A9FAA0007C40FD /* MainTab.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -211,6 +212,7 @@
 		2F13939D23A9AC4B0077F44E /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		2F1393A123A9DAE00077F44E /* SettingRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRootView.swift; sourceTree = "<group>"; };
 		2F38936523A9F882007C40FD /* PokemonRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonRootView.swift; sourceTree = "<group>"; };
+		2F38936723A9FAA0007C40FD /* MainTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTab.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,6 +276,7 @@
 				2F01CBE923A8642600FD1AEA /* Info.plist */,
 				2F01CBDC23A8642000FD1AEA /* PokeMaster.xcdatamodeld */,
 				2F01CBE323A8642600FD1AEA /* Preview Content */,
+				2F38936723A9FAA0007C40FD /* MainTab.swift */,
 			);
 			path = PokeMaster;
 			sourceTree = "<group>";
@@ -679,6 +682,7 @@
 				2F13938223A8822C0077F44E /* PokemonSpecies.swift in Sources */,
 				2F13938423A882570077F44E /* AbilityViewModel.swift in Sources */,
 				2F13939C23A9AA240077F44E /* SettingView.swift in Sources */,
+				2F38936823A9FAA0007C40FD /* MainTab.swift in Sources */,
 				2F13938623A882730077F44E /* PokemonViewModel.swift in Sources */,
 				2F01CBE023A8642000FD1AEA /* ContentView.swift in Sources */,
 				2F13939623A8CCA80077F44E /* PokemonInfoPanelAbilityList.swift in Sources */,
