@@ -11,6 +11,7 @@ import SwiftUI
 struct PokemonList: View {
 
     @State var expandingIndex: Int?
+    @State var searchText: String = ""
 
     var body: some View {
 //        List(PokemonViewModel.all) { (pokemon) in
@@ -18,6 +19,9 @@ struct PokemonList: View {
 //        }
 
         ScrollView {
+            TextField("搜索", text: $searchText)
+                .frame(height: 40)
+                .padding(.horizontal, 25)
             ForEach(PokemonViewModel.all) { (pokemon) in
                 PokemonInfoRow(
                     model: pokemon,
