@@ -14,6 +14,8 @@ struct PokemonInfoPanel: View {
         AbilityViewModel.sample(pokemonID: model.id)
     }
 
+    @State var darkBlur = false
+
     var topIndicator: some View {
         RoundedRectangle(cornerRadius: 3)
             .frame(width: 40, height: 6)
@@ -29,6 +31,11 @@ struct PokemonInfoPanel: View {
 
     var body: some View {
         VStack(spacing: 20) {
+            Button(action: {
+                self.darkBlur.toggle()
+            }) {
+                Text("切换模糊效果")
+            }
             topIndicator
             HeaderView(model: model)
             pokemonDescription
@@ -46,7 +53,7 @@ struct PokemonInfoPanel: View {
                 trailing: 30
             )
         )
-        .blurBackground(style: .systemMaterial)
+        .blurBackground(style: self.darkBlur ? .systemMaterialDark : .systemMaterial)
         .cornerRadius(20)
         .fixedSize(horizontal: false, vertical: true)
     }

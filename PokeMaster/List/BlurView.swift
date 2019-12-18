@@ -12,12 +12,19 @@ import UIKit
 struct BlurView: UIViewRepresentable {
     let style: UIBlurEffect.Style
 
+    init(style: UIBlurEffect.Style) {
+        print("init")
+        self.style = style
+    }
+
     func makeUIView(context: UIViewRepresentableContext<BlurView>) -> UIView {
+        print("makeUIView")
         let view = UIView(frame: .zero)
         view.backgroundColor = .clear
 
         let blurEffect = UIBlurEffect(style: style)
-        let blurView = UIVisualEffectView(effect: blurEffect)
+        let blurView = UIVisualEffectView()
+        blurView.effect = blurEffect
         blurView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(blurView)
         NSLayoutConstraint.activate([
@@ -28,6 +35,11 @@ struct BlurView: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<BlurView>) {
+        print("updateUIView")
+        if let blurView = uiView.subviews.first as? UIVisualEffectView {
+            let blurEffect = UIBlurEffect(style: style)
+            blurView.effect = blurEffect
+        }
     }
 }
 
