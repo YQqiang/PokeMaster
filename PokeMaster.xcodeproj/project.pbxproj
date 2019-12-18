@@ -430,10 +430,9 @@
 		2F13938D23A888CA0077F44E /* List */ = {
 			isa = PBXGroup;
 			children = (
+				2F13939923A9A9150077F44E /* Panel */,
 				2F13938E23A888D70077F44E /* Cell */,
 				2F13939123A8ABED0077F44E /* PokemonList.swift */,
-				2F13939323A8B6FE0077F44E /* PokemonInfoPanel.swift */,
-				2F13939523A8CCA80077F44E /* PokemonInfoPanelAbilityList.swift */,
 				2F13939723A8D5810077F44E /* BlurView.swift */,
 			);
 			path = List;
@@ -445,6 +444,15 @@
 				2F13938F23A888E10077F44E /* PokemonInfoRow.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		2F13939923A9A9150077F44E /* Panel */ = {
+			isa = PBXGroup;
+			children = (
+				2F13939323A8B6FE0077F44E /* PokemonInfoPanel.swift */,
+				2F13939523A8CCA80077F44E /* PokemonInfoPanelAbilityList.swift */,
+			);
+			path = Panel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
