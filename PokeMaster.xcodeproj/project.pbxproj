@@ -95,6 +95,7 @@
 		2F13939C23A9AA240077F44E /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F13939B23A9AA240077F44E /* SettingView.swift */; };
 		2F13939E23A9AC4B0077F44E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F13939D23A9AC4B0077F44E /* Settings.swift */; };
 		2F1393A223A9DAE00077F44E /* SettingRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1393A123A9DAE00077F44E /* SettingRootView.swift */; };
+		2F38936623A9F882007C40FD /* PokemonRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F38936523A9F882007C40FD /* PokemonRootView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -209,6 +210,7 @@
 		2F13939B23A9AA240077F44E /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		2F13939D23A9AC4B0077F44E /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		2F1393A123A9DAE00077F44E /* SettingRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRootView.swift; sourceTree = "<group>"; };
+		2F38936523A9F882007C40FD /* PokemonRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonRootView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -457,6 +459,7 @@
 			isa = PBXGroup;
 			children = (
 				2F13939323A8B6FE0077F44E /* PokemonInfoPanel.swift */,
+				2F38936523A9F882007C40FD /* PokemonRootView.swift */,
 				2F13939523A8CCA80077F44E /* PokemonInfoPanelAbilityList.swift */,
 			);
 			path = Panel;
@@ -683,6 +686,7 @@
 				2F13939023A888E10077F44E /* PokemonInfoRow.swift in Sources */,
 				2F13938C23A882D30077F44E /* Helpers.swift in Sources */,
 				2F13937E23A877DA0077F44E /* Ability.swift in Sources */,
+				2F38936623A9F882007C40FD /* PokemonRootView.swift in Sources */,
 				2F1393A223A9DAE00077F44E /* SettingRootView.swift in Sources */,
 				2F01CBDE23A8642000FD1AEA /* PokeMaster.xcdatamodeld in Sources */,
 				2F13939223A8ABED0077F44E /* PokemonList.swift in Sources */,
