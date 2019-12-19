@@ -213,6 +213,7 @@
 		2F1393A123A9DAE00077F44E /* SettingRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRootView.swift; sourceTree = "<group>"; };
 		2F38936523A9F882007C40FD /* PokemonRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonRootView.swift; sourceTree = "<group>"; };
 		2F38936723A9FAA0007C40FD /* MainTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTab.swift; sourceTree = "<group>"; };
+		2F38936A23AB0015007C40FD /* Combine.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = Combine.playground; path = Playground/Combine.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +244,7 @@
 		2F01CBCC23A8641F00FD1AEA = {
 			isa = PBXGroup;
 			children = (
+				2F38936A23AB0015007C40FD /* Combine.playground */,
 				2F01CBD723A8642000FD1AEA /* PokeMaster */,
 				2F01CBF123A8642700FD1AEA /* PokeMasterTests */,
 				2F01CBFC23A8642800FD1AEA /* PokeMasterUITests */,
