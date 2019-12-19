@@ -1,4 +1,5 @@
 import Combine
+import UIKit
 
 check1("empty", publisher: Empty<Int, SampleError>())
 
@@ -272,3 +273,23 @@ subject3.send("4")
 subject3.send("5")
 subject3.send(completion: .finished)
 subject4.send(completion: .finished)
+
+//---------Future--------
+func loadPage(url: URL, handle: @escaping (Data?, URLResponse?, Error?) -> Void) {
+    URLSession.shared.dataTask(with: url) { (data, response, error) in
+        handle(data, response, error)
+    }.resume()
+}
+
+let future = check("Future") {
+    Future<(Data, URLResponse), Error> { promise in
+        loadPage(url: URL(string: "https://apple.com")!) { (data, response, error) in
+            if let data = data, let response = response {
+                promise(.success((data, response)))
+            } else {
+                promise(.failure(error!))
+            }
+
+        }
+    }
+}
