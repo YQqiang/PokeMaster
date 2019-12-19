@@ -2,6 +2,7 @@ import Combine
 
 check1("empty", publisher: Empty<Int, SampleError>())
 
+//---------Publisher--------
 check("Empty") {
     Empty<Int, SampleError>()
 }
