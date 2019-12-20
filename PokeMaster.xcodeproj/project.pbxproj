@@ -103,6 +103,7 @@
 		2F713B0E23AC9BF400D7C972 /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F713B0D23AC9BF300D7C972 /* UserDefaultsStorage.swift */; };
 		2F713B1023ACBCFB00D7C972 /* EmailCheckingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F713B0F23ACBCFB00D7C972 /* EmailCheckingRequest.swift */; };
 		2F713B1223ACC24F00D7C972 /* DisposeBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F713B1123ACC24F00D7C972 /* DisposeBag.swift */; };
+		2F713B1423ACC56800D7C972 /* LoadPokemonRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F713B1323ACC56800D7C972 /* LoadPokemonRequest.swift */; };
 		2FD2BFA723AC5FCC008F8001 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD2BFA623AC5FCC008F8001 /* AppState.swift */; };
 		2FD2BFA923AC5FD9008F8001 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD2BFA823AC5FD9008F8001 /* Store.swift */; };
 		2FD2BFAB23AC67EB008F8001 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD2BFAA23AC67EB008F8001 /* User.swift */; };
@@ -231,6 +232,7 @@
 		2F713B0D23AC9BF300D7C972 /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
 		2F713B0F23ACBCFB00D7C972 /* EmailCheckingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailCheckingRequest.swift; sourceTree = "<group>"; };
 		2F713B1123ACC24F00D7C972 /* DisposeBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisposeBag.swift; sourceTree = "<group>"; };
+		2F713B1323ACC56800D7C972 /* LoadPokemonRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadPokemonRequest.swift; sourceTree = "<group>"; };
 		2FD2BFA623AC5FCC008F8001 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		2FD2BFA823AC5FD9008F8001 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		2FD2BFAA23AC67EB008F8001 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -474,6 +476,7 @@
 				2F13939923A9A9150077F44E /* Panel */,
 				2F13938E23A888D70077F44E /* Cell */,
 				2F13939123A8ABED0077F44E /* PokemonList.swift */,
+				2F713B1323ACC56800D7C972 /* LoadPokemonRequest.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -731,6 +734,7 @@
 				2FD2BFAB23AC67EB008F8001 /* User.swift in Sources */,
 				2FD2BFA723AC5FCC008F8001 /* AppState.swift in Sources */,
 				2F13937C23A8779E0077F44E /* Language.swift in Sources */,
+				2F713B1423ACC56800D7C972 /* LoadPokemonRequest.swift in Sources */,
 				2FD2BFA923AC5FD9008F8001 /* Store.swift in Sources */,
 				2F01CBDB23A8642000FD1AEA /* SceneDelegate.swift in Sources */,
 				2F13939823A8D5810077F44E /* BlurView.swift in Sources */,
