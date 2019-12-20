@@ -258,9 +258,9 @@ subject2.send(completion: .finished)
 let subject3 = PassthroughSubject<String, Never>()
 let subject4 = PassthroughSubject<String, Never>()
 
-check("Combine Latest") {
-    subject3.combineLatest(subject4)
-}
+//check("Combine Latest") {
+//    subject3.combineLatest(subject4)
+//}
 
 subject3.send("1")
 subject4.send("A")
@@ -293,3 +293,87 @@ let future = check("Future") {
         }
     }
 }
+
+class Wrapper {
+    @Published var text: String = "hoho"
+}
+
+let wrapper = Wrapper()
+check("Published") {
+    wrapper.$text
+}
+wrapper.text = "123"
+wrapper.text = "abc"
+
+
+class Clock {
+    var timeString: String = "--:--:--" {
+        didSet {
+            print("\(timeString)")
+        }
+    }
+}
+
+let clock = Clock()
+let formatter = DateFormatter()
+formatter.timeStyle = .medium
+
+let timer = Timer.publish(every: 1, on: .main, in: .default)
+var token = timer.map { formatter.string(from: $0) }
+                .assign(to: \.timeString, on: clock)
+
+//timer.connect()
+
+
+class LoadingUI {
+    var isSuccess = false
+    var text: String = ""
+}
+
+struct Response: Decodable {
+    struct Foo: Decodable {
+        let foo: String
+    }
+    let args: Foo?
+}
+
+let dataTaskPublish = URLSession.shared.dataTaskPublisher(for: URL(string: "https://httpbin.org/get?foo=bar")!).share()
+
+let isSuccess = dataTaskPublish.map { (data, response) -> Bool in
+    if let response = response as? HTTPURLResponse {
+        if response.statusCode == 200 {
+            return true
+        }
+    }
+    return false
+}.replaceError(with: false)
+
+let lastestText = dataTaskPublish
+    .map({ (data, _) -> Data in
+        return data
+    })
+    .decode(type: Response.self, decoder: JSONDecoder())
+    .compactMap { $0.args?.foo }
+    .replaceError(with: "")
+
+let ui = LoadingUI()
+var token1 = isSuccess.assign(to: \.isSuccess, on: ui)
+var token2 = lastestText.assign(to: \.text, on: ui)
+
+let searchText = PassthroughSubject<String, Never>()
+
+check("Debounce") {
+    searchText
+        .scan("", { $0 + " " + $1 })
+        .map({ (s) -> URL in
+            let data = "https://httpbin.org/get?foo=\(s)".data(using: String.Encoding.utf8)
+            return URL(dataRepresentation: data!, relativeTo: nil)!
+        })
+        .debounce(for: 1, scheduler: RunLoop.main)
+}
+
+delay(0.1) { searchText.send("I") }
+delay(0.2) { searchText.send("Love") }
+delay(0.5) { searchText.send("SwiftUI") }
+delay(1.6) { searchText.send("And") }
+delay(2.0) { searchText.send("Combine") }
