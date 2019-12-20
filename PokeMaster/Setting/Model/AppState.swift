@@ -18,9 +18,13 @@ extension AppState {
             case id, color, name, favorite
         }
 
-        var showEnglishName = false
+        @UserDefaultsStorage(key: "showEnglishName", defaultValue: false)
+        var showEnglishName: Bool
+
         var sorting: Sorting = .id
-        var showFavoriteOnly = false
+
+        @UserDefaultsStorage(key: "showFavoriteOnly", defaultValue: false)
+        var showFavoriteOnly: Bool
 
         enum AccountBehavior: CaseIterable {
             case register, login

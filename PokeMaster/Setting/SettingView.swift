@@ -58,7 +58,9 @@ struct SettingView: View {
             } else {
                 Text(settings.loginUser!.email)
                 Button("注销") {
-                    self.store.appState.settings.loginUser = nil
+                    self.store.dispatch(
+                        .logout
+                    )
                 }
             }
         }
