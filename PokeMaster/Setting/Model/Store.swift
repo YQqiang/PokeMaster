@@ -11,6 +11,18 @@ import SwiftUI
 class Store: ObservableObject {
     @Published var appState: AppState = AppState()
 
+    let disposeBag = DisposeBag()
+
+    init() {
+        setupObservers()
+    }
+
+    func setupObservers() {
+        appState.settings.checker.isEmailVaid.sink { (isValid) in
+            self.dispatch(.emailValid(valid: isValid))
+        }.add(to: disposeBag)
+    }
+
     func dispatch(_ action: AppAction) {
         #if DEBUG
         print("[ACTION]:\(action)")
@@ -47,6 +59,8 @@ class Store: ObservableObject {
             }
         case .logout:
             appState.settings.loginUser = nil
+        case .emailValid(valid: let valid):
+            appState.settings.isEmailValid = valid
         }
         return (appState, appCommand)
     }

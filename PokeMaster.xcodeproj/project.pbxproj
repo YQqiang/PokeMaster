@@ -101,6 +101,8 @@
 		2F713B0823AC809A00D7C972 /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F713B0723AC809A00D7C972 /* FileStorage.swift */; };
 		2F713B0A23AC934200D7C972 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F713B0923AC934200D7C972 /* ActivityIndicatorView.swift */; };
 		2F713B0E23AC9BF400D7C972 /* UserDefaultsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F713B0D23AC9BF300D7C972 /* UserDefaultsStorage.swift */; };
+		2F713B1023ACBCFB00D7C972 /* EmailCheckingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F713B0F23ACBCFB00D7C972 /* EmailCheckingRequest.swift */; };
+		2F713B1223ACC24F00D7C972 /* DisposeBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F713B1123ACC24F00D7C972 /* DisposeBag.swift */; };
 		2FD2BFA723AC5FCC008F8001 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD2BFA623AC5FCC008F8001 /* AppState.swift */; };
 		2FD2BFA923AC5FD9008F8001 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD2BFA823AC5FD9008F8001 /* Store.swift */; };
 		2FD2BFAB23AC67EB008F8001 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD2BFAA23AC67EB008F8001 /* User.swift */; };
@@ -227,6 +229,8 @@
 		2F713B0723AC809A00D7C972 /* FileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorage.swift; sourceTree = "<group>"; };
 		2F713B0923AC934200D7C972 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		2F713B0D23AC9BF300D7C972 /* UserDefaultsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStorage.swift; sourceTree = "<group>"; };
+		2F713B0F23ACBCFB00D7C972 /* EmailCheckingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailCheckingRequest.swift; sourceTree = "<group>"; };
+		2F713B1123ACC24F00D7C972 /* DisposeBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisposeBag.swift; sourceTree = "<group>"; };
 		2FD2BFA623AC5FCC008F8001 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		2FD2BFA823AC5FD9008F8001 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		2FD2BFAA23AC67EB008F8001 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -356,6 +360,7 @@
 				2F713B0723AC809A00D7C972 /* FileStorage.swift */,
 				2F713B0923AC934200D7C972 /* ActivityIndicatorView.swift */,
 				2F713B0D23AC9BF300D7C972 /* UserDefaultsStorage.swift */,
+				2F713B1123ACC24F00D7C972 /* DisposeBag.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -517,6 +522,7 @@
 			isa = PBXGroup;
 			children = (
 				2FD2BFAE23AC6FFF008F8001 /* LoginRequest.swift */,
+				2F713B0F23ACBCFB00D7C972 /* EmailCheckingRequest.swift */,
 				2F713B0323AC723700D7C972 /* AppError.swift */,
 				2F713B0523AC733300D7C972 /* AppCommand.swift */,
 			);
@@ -718,6 +724,7 @@
 			files = (
 				2F713B0E23AC9BF400D7C972 /* UserDefaultsStorage.swift in Sources */,
 				2FD2BFAF23AC6FFF008F8001 /* LoginRequest.swift in Sources */,
+				2F713B1023ACBCFB00D7C972 /* EmailCheckingRequest.swift in Sources */,
 				2F13938023A881FF0077F44E /* Pokemon.swift in Sources */,
 				2F13938A23A882B80077F44E /* Sample.swift in Sources */,
 				2F01CBD923A8642000FD1AEA /* AppDelegate.swift in Sources */,
@@ -731,6 +738,7 @@
 				2F713B0823AC809A00D7C972 /* FileStorage.swift in Sources */,
 				2F713B0623AC733300D7C972 /* AppCommand.swift in Sources */,
 				2F13939423A8B6FE0077F44E /* PokemonInfoPanel.swift in Sources */,
+				2F713B1223ACC24F00D7C972 /* DisposeBag.swift in Sources */,
 				2F13938223A8822C0077F44E /* PokemonSpecies.swift in Sources */,
 				2F13938423A882570077F44E /* AbilityViewModel.swift in Sources */,
 				2F713B0A23AC934200D7C972 /* ActivityIndicatorView.swift in Sources */,
