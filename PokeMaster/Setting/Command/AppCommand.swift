@@ -31,3 +31,16 @@ struct LoginAppCommand: AppCommand {
             })
     }
 }
+
+struct LoadPokemonsAppCommand: AppCommand {
+    func execute(in store: Store) {
+        _ = LoadPokemonRequest.all
+            .sink(receiveCompletion: { (completion) in
+                if case .failure(let error) = completion {
+                    store.dispatch(.loadPokemonsDone(result: .failure(error)))
+                }
+            }, receiveValue: { (value) in
+                store.dispatch(.loadPokemonsDone(result: .success(value)))
+            })
+    }
+}

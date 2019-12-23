@@ -11,6 +11,7 @@ import Combine
 
 struct AppState {
     var settings = Settings()
+    var pokemonList = PokemonList()
 }
 
 extension AppState {
@@ -90,6 +91,20 @@ extension AppState.Settings.AccountBehavior {
         switch self {
         case .register: return "注册"
         case .login: return "登录"
+        }
+    }
+}
+
+extension AppState {
+    struct PokemonList {
+        var pokemons: [Int: PokemonViewModel]?
+        var loadingPokemons = false
+        
+        var allPokemonsById: [PokemonViewModel] {
+            guard let pokemons = pokemons?.values else {
+                return []
+            }
+            return pokemons.sorted { $0.id < $1.id }
         }
     }
 }
