@@ -15,7 +15,7 @@ struct EmailCheckingRequest {
     var publisher: AnyPublisher<Bool, Never> {
         Future<Bool, Never> { (promise) in
             DispatchQueue.global().asyncAfter(deadline: .now() + 0.5) {
-                    if self.email == "abc@qq.com" {
+                    if self.email == "a@b.c" {
                         promise(.success(false))
                     } else {
                         promise(.success(true))

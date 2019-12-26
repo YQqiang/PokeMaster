@@ -106,6 +106,7 @@
 		2F713B1223ACC24F00D7C972 /* DisposeBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F713B1123ACC24F00D7C972 /* DisposeBag.swift */; };
 		2F713B1423ACC56800D7C972 /* LoadPokemonRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F713B1323ACC56800D7C972 /* LoadPokemonRequest.swift */; };
 		2FB88C9223B4B63400CD6FF7 /* PasswordCheckingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB88C9123B4B63400CD6FF7 /* PasswordCheckingRequest.swift */; };
+		2FB88C9423B4D56300CD6FF7 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB88C9323B4D56300CD6FF7 /* RegisterRequest.swift */; };
 		2FD2BFA723AC5FCC008F8001 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD2BFA623AC5FCC008F8001 /* AppState.swift */; };
 		2FD2BFA923AC5FD9008F8001 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD2BFA823AC5FD9008F8001 /* Store.swift */; };
 		2FD2BFAB23AC67EB008F8001 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD2BFAA23AC67EB008F8001 /* User.swift */; };
@@ -236,6 +237,7 @@
 		2F713B1123ACC24F00D7C972 /* DisposeBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisposeBag.swift; sourceTree = "<group>"; };
 		2F713B1323ACC56800D7C972 /* LoadPokemonRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadPokemonRequest.swift; sourceTree = "<group>"; };
 		2FB88C9123B4B63400CD6FF7 /* PasswordCheckingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCheckingRequest.swift; sourceTree = "<group>"; };
+		2FB88C9323B4D56300CD6FF7 /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
 		2FD2BFA623AC5FCC008F8001 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		2FD2BFA823AC5FD9008F8001 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		2FD2BFAA23AC67EB008F8001 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -529,6 +531,7 @@
 			isa = PBXGroup;
 			children = (
 				2FD2BFAE23AC6FFF008F8001 /* LoginRequest.swift */,
+				2FB88C9323B4D56300CD6FF7 /* RegisterRequest.swift */,
 				2F713B0F23ACBCFB00D7C972 /* EmailCheckingRequest.swift */,
 				2FB88C9123B4B63400CD6FF7 /* PasswordCheckingRequest.swift */,
 				2F713B0323AC723700D7C972 /* AppError.swift */,
@@ -736,6 +739,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FB88C9423B4D56300CD6FF7 /* RegisterRequest.swift in Sources */,
 				2F713B0E23AC9BF400D7C972 /* UserDefaultsStorage.swift in Sources */,
 				2FD2BFAF23AC6FFF008F8001 /* LoginRequest.swift in Sources */,
 				2F713B1023ACBCFB00D7C972 /* EmailCheckingRequest.swift in Sources */,

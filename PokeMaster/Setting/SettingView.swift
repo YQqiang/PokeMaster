@@ -48,12 +48,22 @@ struct SettingView: View {
                     ActivityIndicatorView(style: .medium)
                 } else {
                     Button(settings.checker.accountBehavior.text) {
-                        self.store.dispatch(
-                            .login(
-                                email: self.settings.checker.email,
-                                password: self.settings.checker.password
+                        switch self.settings.checker.accountBehavior {
+                        case .login:
+                            self.store.dispatch(
+                                .login(
+                                    email: self.settings.checker.email,
+                                    password: self.settings.checker.password
+                                )
                             )
-                        )
+                        case .register:
+                            self.store.dispatch(
+                                .register(
+                                    email: self.settings.checker.email,
+                                    password: self.settings.checker.password
+                                )
+                            )
+                        }
                     }
                     .disabled(!settings.isEmailPasswordValid)
                 }

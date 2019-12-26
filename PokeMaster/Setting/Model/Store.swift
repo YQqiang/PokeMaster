@@ -69,6 +69,10 @@ class Store: ObservableObject {
         case .emailPasswordValid(valid: let valid):
             appState.settings.isEmailPasswordValid = valid
             
+        case .register(email: let email, password: let pwd):
+            appState.settings.loginRequesting = true
+            appCommand = RegisterAppCommand(email: email, password: pwd)
+            
         case .loadPokemons:
             if appState.pokemonList.loadingPokemons {
                 break
