@@ -41,6 +41,8 @@ extension AppState {
 
         var isEmailValid: Bool = false
         var isEmailPasswordValid: Bool = false
+        
+        var clearCacheSuccess: Bool = false
 
         class AccountChecker {
             @Published var accountBehavior = AccountBehavior.login

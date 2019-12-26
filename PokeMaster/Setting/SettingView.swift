@@ -26,6 +26,9 @@ struct SettingView: View {
         .alert(item: settingsBinding.loginError) { (error) -> Alert in
             Alert(title: Text(error.localizedDescription))
         }
+        .alert(isPresented: settingsBinding.clearCacheSuccess) { () -> Alert in
+            Alert(title: Text("清空缓存成功!"))
+        }
     }
 
     var accountSection: some View {
@@ -97,7 +100,7 @@ struct SettingView: View {
     var actionSection: some View {
         Section {
             Button("清空缓存") {
-                print("")
+                self.store.dispatch(.clearCache)
             }
             .foregroundColor(.red)
         }

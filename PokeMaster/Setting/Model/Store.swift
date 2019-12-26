@@ -86,6 +86,10 @@ class Store: ObservableObject {
             case .failure(let error):
                 print(error)
             }
+            
+        case .clearCache:
+            appState.pokemonList.pokemons = nil
+            appState.settings.clearCacheSuccess = true
         }
         return (appState, appCommand)
     }
