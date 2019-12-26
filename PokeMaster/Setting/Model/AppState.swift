@@ -40,12 +40,33 @@ extension AppState {
         var loginError: AppError?
 
         var isEmailValid: Bool = false
+        var isEmailPasswordValid: Bool = false
 
         class AccountChecker {
             @Published var accountBehavior = AccountBehavior.login
             @Published var email = ""
             @Published var password = ""
             @Published var verifyPassword = ""
+            
+            var emailPwdPublisher: AnyPublisher<Bool, Never> {
+                let emailVerify = isEmailVaid
+                let passwordVerify = isPasswordValid
+                return Publishers.CombineLatest(emailVerify, passwordVerify)
+                    .map { $0 && $1}
+                    .eraseToAnyPublisher()
+            }
+            
+            var isPasswordValid: AnyPublisher<Bool, Never> {
+                let passwordVerify = $password.map { $0.count > 0 }
+                let verifyPasswordVerify = $verifyPassword.map { $0.count > 0 }
+                let samePasswordVerify = $password.combineLatest($verifyPassword)
+                    .map { $0 == $1 }
+                    .eraseToAnyPublisher()
+                let canSkipSameVerify = $accountBehavior.map { $0 == .login }
+                return Publishers.CombineLatest4(passwordVerify, verifyPasswordVerify, samePasswordVerify, canSkipSameVerify)
+                    .map { $3 ? $0 : $0 && $1 && $2 }
+                    .eraseToAnyPublisher()
+            }
 
             var isEmailVaid: AnyPublisher<Bool, Never> {
                 let remoteVerify = $email

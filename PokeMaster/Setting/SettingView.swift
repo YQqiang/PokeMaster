@@ -55,6 +55,7 @@ struct SettingView: View {
                             )
                         )
                     }
+                    .disabled(!settings.isEmailPasswordValid)
                 }
             } else {
                 Text(settings.loginUser!.email)

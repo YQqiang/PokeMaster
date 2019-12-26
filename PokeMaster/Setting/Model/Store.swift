@@ -21,6 +21,10 @@ class Store: ObservableObject {
         appState.settings.checker.isEmailVaid.sink { (isValid) in
             self.dispatch(.emailValid(valid: isValid))
         }.add(to: disposeBag)
+        
+        appState.settings.checker.emailPwdPublisher.sink { (isValid) in
+            self.dispatch(.emailPasswordValid(valid: isValid))
+        }.add(to: disposeBag)
     }
 
     func dispatch(_ action: AppAction) {
@@ -61,6 +65,9 @@ class Store: ObservableObject {
             appState.settings.loginUser = nil
         case .emailValid(valid: let valid):
             appState.settings.isEmailValid = valid
+            
+        case .emailPasswordValid(valid: let valid):
+            appState.settings.isEmailPasswordValid = valid
             
         case .loadPokemons:
             if appState.pokemonList.loadingPokemons {
