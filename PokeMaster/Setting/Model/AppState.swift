@@ -118,6 +118,7 @@ extension AppState.Settings.AccountBehavior {
 
 extension AppState {
     struct PokemonList {
+        @FileStorage(directory: .cachesDirectory, fileName: "pokemons.json")
         var pokemons: [Int: PokemonViewModel]?
         var loadingPokemons = false
         
