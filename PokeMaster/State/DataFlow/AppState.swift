@@ -123,6 +123,8 @@ extension AppState {
         
         struct SelectionState {
             var expandingIndex: Int?
+            var panelIndex: Int?
+            var panelPresented = false
             
             func isExpanding(_ id: Int) -> Bool {
                 expandingIndex == id

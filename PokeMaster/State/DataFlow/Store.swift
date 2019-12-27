@@ -97,8 +97,11 @@ class Store: ObservableObject {
             let expanding = appState.pokemonList.selectionState.expandingIndex
             if expanding == index {
                 appState.pokemonList.selectionState.expandingIndex = nil
+                appState.pokemonList.selectionState.panelIndex = nil
+                appState.pokemonList.selectionState.panelPresented = false
             } else {
                 appState.pokemonList.selectionState.expandingIndex = index
+                appState.pokemonList.selectionState.panelIndex = index
             }
         case .loadAbilities(pokemon: let pokemon):
             appCommand = LoadAbilitiesCommand(pokemon: pokemon)
@@ -114,6 +117,9 @@ class Store: ObservableObject {
             case .failure(let error):
                 print(error)
             }
+            
+        case .togglePanelPresenting(presenting: let presenting):
+            appState.pokemonList.selectionState.panelPresented = presenting
         }
         return (appState, appCommand)
     }

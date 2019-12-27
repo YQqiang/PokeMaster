@@ -10,6 +10,9 @@ import SwiftUI
 import KingfisherSwiftUI
 
 struct PokemonInfoRow: View {
+    
+    @EnvironmentObject var store: Store
+    
     let model: PokemonViewModel
     let expanded: Bool
 
@@ -40,7 +43,10 @@ struct PokemonInfoRow: View {
                     Image(systemName: "star")
                         .modifier(ToolButtonModifier())
                 }
-                Button(action: {print("Panel")}) {
+                Button(action: {
+                    let target = !self.store.appState.pokemonList.selectionState.panelPresented
+                    self.store.dispatch(.togglePanelPresenting(presenting: target))
+                }) {
                     Image(systemName: "chart.bar")
                         .modifier(ToolButtonModifier())
                 }
