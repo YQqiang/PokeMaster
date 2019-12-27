@@ -11,8 +11,6 @@ import SwiftUI
 struct PokemonList: View {
 
     @EnvironmentObject var store: Store
-    @State var expandingIndex: Int?
-    @State var searchText: String = ""
 
     var body: some View {
 //        List(PokemonViewModel.all) { (pokemon) in
@@ -20,20 +18,16 @@ struct PokemonList: View {
 //        }
 
         ScrollView {
-            TextField("搜索", text: $searchText)
+            TextField("搜索", text: $store.appState.pokemonList.searchText)
                 .frame(height: 40)
                 .padding(.horizontal, 25)
             ForEach(store.appState.pokemonList.allPokemonsById) { (pokemon) in
                 PokemonInfoRow(
                     model: pokemon,
-                    expanded: self.expandingIndex == pokemon.id
+                    expanded: self.store.appState.pokemonList.selectionState.isExpanding(pokemon.id)
                 )
                 .onTapGesture {
-                    if self.expandingIndex == pokemon.id {
-                        self.expandingIndex = nil
-                    } else {
-                        self.expandingIndex = pokemon.id
-                    }
+                    self.store.dispatch(.toggleListSelection(index: pokemon.id))
                 }
             }
         }

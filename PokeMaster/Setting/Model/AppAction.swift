@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 enum AppAction {
     case login(email: String, password: String)
@@ -22,4 +23,7 @@ enum AppAction {
     case loadPokemonsDone(result: Result<[PokemonViewModel], AppError>)
     
     case clearCache
+    
+    case toggleListSelection(index: Int)
+    
 }

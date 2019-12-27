@@ -92,6 +92,14 @@ class Store: ObservableObject {
         case .clearCache:
             appState.pokemonList.pokemons = nil
             appState.settings.clearCacheSuccess = true
+            
+        case .toggleListSelection(index: let index):
+            let expanding = appState.pokemonList.selectionState.expandingIndex
+            if expanding == index {
+                appState.pokemonList.selectionState.expandingIndex = nil
+            } else {
+                appState.pokemonList.selectionState.expandingIndex = index
+            }
         }
         return (appState, appCommand)
     }

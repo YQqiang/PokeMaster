@@ -120,11 +120,22 @@ extension AppState.Settings.AccountBehavior {
 
 extension AppState {
     struct PokemonList {
+        
+        struct SelectionState {
+            var expandingIndex: Int?
+            
+            func isExpanding(_ id: Int) -> Bool {
+                expandingIndex == id
+            }
+        }
+        
         @FileStorage(directory: .cachesDirectory, fileName: "pokemons.json")
         var pokemons: [Int: PokemonViewModel]?
         var loadingPokemons = false
         
         var error: AppError?
+        var searchText: String = ""
+        var selectionState = SelectionState()
         
         var allPokemonsById: [PokemonViewModel] {
             guard let pokemons = pokemons?.values else {
