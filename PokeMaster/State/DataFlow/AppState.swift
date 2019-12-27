@@ -145,12 +145,17 @@ extension AppState {
         }
         
         /// 按 ID 缓存所有的 AbilityViewModel
+        @FileStorage(directory: .cachesDirectory, fileName: "abilities.json")
         var abilities: [Int: AbilityViewModel]?
         
         /// 返回 某个 Pokemon 的所有技能的 AbilityViewModel
         /// - Parameter pokemon: pokemon
-        func abilityViewModel(_ pokemon: Pokemon) -> [AbilityViewModel]? {
-            return []
+        func abilityViewModels(_ pokemon: Pokemon) -> [AbilityViewModel]? {
+            guard let abilities = abilities else {
+                return nil
+            }
+            return pokemon.abilities.compactMap { abilities[$0.ability.url.extractedID!]
+            }
         }
     }
 }

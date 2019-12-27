@@ -9,9 +9,12 @@
 import SwiftUI
 
 struct PokemonInfoPanel: View {
+    
+    @EnvironmentObject var store: Store
+    
     let model: PokemonViewModel
-    var abilities: [AbilityViewModel] {
-        AbilityViewModel.sample(pokemonID: model.id)
+    var abilities: [AbilityViewModel]? {
+        store.appState.pokemonList.abilityViewModels(model.pokemon)
     }
 
     @State var darkBlur = false
