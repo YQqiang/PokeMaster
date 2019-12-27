@@ -40,8 +40,11 @@ struct PokemonInfoPanel: View {
                 Text("切换模糊效果")
             }
             topIndicator
-            HeaderView(model: model)
-            pokemonDescription
+            Group {
+                HeaderView(model: model)
+                pokemonDescription
+            }
+            .animation(nil)
             Line(direction: .horizont)
             AbilityList(
                 model: model,

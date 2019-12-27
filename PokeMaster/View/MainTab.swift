@@ -35,7 +35,12 @@ struct MainTab: View {
             }
         }
         .edgesIgnoringSafeArea(.top)
-        .overlay(panel)
+        .overlaySheet(isPresented: pokemonListBinding.selectionState.panelPresented) {
+            if self.selectedPanelIndex != nil
+                && self.pokemonList.pokemons != nil {
+                PokemonInfoPanelOverlay(model: self.pokemonList.pokemons![self.selectedPanelIndex!]!)
+            }
+        }
     }
     
     var panel: some View {
