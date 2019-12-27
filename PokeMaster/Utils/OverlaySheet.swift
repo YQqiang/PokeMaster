@@ -9,17 +9,6 @@
 import Foundation
 import SwiftUI
 
-struct PokemonInfoPanelOverlay: View {
-    let model: PokemonViewModel
-    var body: some View {
-        VStack {
-            Spacer()
-            PokemonInfoPanel(model: model)
-        }
-        .edgesIgnoringSafeArea(.bottom)
-    }
-}
-
 struct OverlaySheet<Content: View>: View {
     private let isPresented: Binding<Bool>
     private let makeContent: () -> Content

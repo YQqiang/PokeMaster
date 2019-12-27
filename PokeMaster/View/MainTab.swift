@@ -38,22 +38,7 @@ struct MainTab: View {
         .overlaySheet(isPresented: pokemonListBinding.selectionState.panelPresented) {
             if self.selectedPanelIndex != nil
                 && self.pokemonList.pokemons != nil {
-                PokemonInfoPanelOverlay(model: self.pokemonList.pokemons![self.selectedPanelIndex!]!)
-            }
-        }
-    }
-    
-    var panel: some View {
-        Group {
-            if store.appState.pokemonList.selectionState.panelPresented {
-                if selectedPanelIndex != nil
-                    && pokemonList.pokemons != nil {
-                    PokemonInfoPanelOverlay(model: pokemonList.pokemons![selectedPanelIndex!]!)
-                } else {
-                    EmptyView()
-                }
-            } else {
-                EmptyView()
+                PokemonInfoPanel(model: self.pokemonList.pokemons![self.selectedPanelIndex!]!)
             }
         }
     }
