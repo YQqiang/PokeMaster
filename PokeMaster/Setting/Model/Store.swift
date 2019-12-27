@@ -77,14 +77,16 @@ class Store: ObservableObject {
             if appState.pokemonList.loadingPokemons {
                 break
             }
+            appState.pokemonList.error = nil
             appState.pokemonList.loadingPokemons = true
             appCommand = LoadPokemonsAppCommand()
         case .loadPokemonsDone(result: let result):
+            appState.pokemonList.loadingPokemons = false
             switch result {
             case .success(let models):
                 appState.pokemonList.pokemons = Dictionary.init(uniqueKeysWithValues: models.map({ ($0.id, $0)} ))
             case .failure(let error):
-                print(error)
+                appState.pokemonList.error = error
             }
             
         case .clearCache:

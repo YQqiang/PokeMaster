@@ -124,6 +124,8 @@ extension AppState {
         var pokemons: [Int: PokemonViewModel]?
         var loadingPokemons = false
         
+        var error: AppError?
+        
         var allPokemonsById: [PokemonViewModel] {
             guard let pokemons = pokemons?.values else {
                 return []

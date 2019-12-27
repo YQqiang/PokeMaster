@@ -13,7 +13,12 @@ struct PokemonRootView: View {
     
     var body: some View {
         NavigationView {
-            if store.appState.pokemonList.pokemons == nil {
+            if store.appState.pokemonList.error != nil {
+                RetryView()
+                    .onTapGesture {
+                        self.store.dispatch(.loadPokemons)
+                    }
+            } else if store.appState.pokemonList.pokemons == nil {
                 Text("Loading...").onAppear() {
                     self.store.dispatch(.loadPokemons)
                 }
