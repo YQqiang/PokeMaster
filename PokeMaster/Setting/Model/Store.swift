@@ -100,6 +100,20 @@ class Store: ObservableObject {
             } else {
                 appState.pokemonList.selectionState.expandingIndex = index
             }
+        case .loadAbilities(pokemon: let pokemon):
+            appCommand = LoadAbilitiesCommand(pokemon: pokemon)
+            
+        case .loadAbilitiesDone(result: let result):
+            switch result {
+            case .success(let loadedAbilities):
+                var abilities = appState.pokemonList.abilities ?? [:]
+                for ability in loadedAbilities {
+                    abilities[ability.id] = ability
+                }
+                appState.pokemonList.abilities = abilities
+            case .failure(let error):
+                print(error)
+            }
         }
         return (appState, appCommand)
     }

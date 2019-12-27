@@ -25,5 +25,7 @@ enum AppAction {
     case clearCache
     
     case toggleListSelection(index: Int)
+    case loadAbilities(pokemon: Pokemon)
+    case loadAbilitiesDone(result: Result<[AbilityViewModel], AppError>)
     
 }

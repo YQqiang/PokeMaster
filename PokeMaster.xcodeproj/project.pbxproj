@@ -105,9 +105,9 @@
 		2F713B1023ACBCFB00D7C972 /* EmailCheckingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F713B0F23ACBCFB00D7C972 /* EmailCheckingRequest.swift */; };
 		2F713B1223ACC24F00D7C972 /* DisposeBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F713B1123ACC24F00D7C972 /* DisposeBag.swift */; };
 		2F713B1423ACC56800D7C972 /* LoadPokemonRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F713B1323ACC56800D7C972 /* LoadPokemonRequest.swift */; };
-		2FB88C9223B4B63400CD6FF7 /* PasswordCheckingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB88C9123B4B63400CD6FF7 /* PasswordCheckingRequest.swift */; };
 		2FB88C9423B4D56300CD6FF7 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB88C9323B4D56300CD6FF7 /* RegisterRequest.swift */; };
 		2FB88C9623B58C4400CD6FF7 /* RetryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB88C9523B58C4400CD6FF7 /* RetryView.swift */; };
+		2FB88C9823B5DE9D00CD6FF7 /* LoadAbilityRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB88C9723B5DE9D00CD6FF7 /* LoadAbilityRequest.swift */; };
 		2FD2BFA723AC5FCC008F8001 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD2BFA623AC5FCC008F8001 /* AppState.swift */; };
 		2FD2BFA923AC5FD9008F8001 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD2BFA823AC5FD9008F8001 /* Store.swift */; };
 		2FD2BFAB23AC67EB008F8001 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD2BFAA23AC67EB008F8001 /* User.swift */; };
@@ -237,9 +237,9 @@
 		2F713B0F23ACBCFB00D7C972 /* EmailCheckingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailCheckingRequest.swift; sourceTree = "<group>"; };
 		2F713B1123ACC24F00D7C972 /* DisposeBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisposeBag.swift; sourceTree = "<group>"; };
 		2F713B1323ACC56800D7C972 /* LoadPokemonRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadPokemonRequest.swift; sourceTree = "<group>"; };
-		2FB88C9123B4B63400CD6FF7 /* PasswordCheckingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCheckingRequest.swift; sourceTree = "<group>"; };
 		2FB88C9323B4D56300CD6FF7 /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
 		2FB88C9523B58C4400CD6FF7 /* RetryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryView.swift; sourceTree = "<group>"; };
+		2FB88C9723B5DE9D00CD6FF7 /* LoadAbilityRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadAbilityRequest.swift; sourceTree = "<group>"; };
 		2FD2BFA623AC5FCC008F8001 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		2FD2BFA823AC5FD9008F8001 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		2FD2BFAA23AC67EB008F8001 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -485,6 +485,7 @@
 				2F13939923A9A9150077F44E /* Panel */,
 				2F13938E23A888D70077F44E /* Cell */,
 				2F13939123A8ABED0077F44E /* PokemonList.swift */,
+				2FB88C9723B5DE9D00CD6FF7 /* LoadAbilityRequest.swift */,
 				2F713B1323ACC56800D7C972 /* LoadPokemonRequest.swift */,
 			);
 			path = List;
@@ -536,7 +537,6 @@
 				2FD2BFAE23AC6FFF008F8001 /* LoginRequest.swift */,
 				2FB88C9323B4D56300CD6FF7 /* RegisterRequest.swift */,
 				2F713B0F23ACBCFB00D7C972 /* EmailCheckingRequest.swift */,
-				2FB88C9123B4B63400CD6FF7 /* PasswordCheckingRequest.swift */,
 				2F713B0323AC723700D7C972 /* AppError.swift */,
 				2F713B0523AC733300D7C972 /* AppCommand.swift */,
 			);
@@ -774,9 +774,9 @@
 				2F13939023A888E10077F44E /* PokemonInfoRow.swift in Sources */,
 				2F13938C23A882D30077F44E /* Helpers.swift in Sources */,
 				2F13937E23A877DA0077F44E /* Ability.swift in Sources */,
+				2FB88C9823B5DE9D00CD6FF7 /* LoadAbilityRequest.swift in Sources */,
 				2F38936623A9F882007C40FD /* PokemonRootView.swift in Sources */,
 				2FB88C9623B58C4400CD6FF7 /* RetryView.swift in Sources */,
-				2FB88C9223B4B63400CD6FF7 /* PasswordCheckingRequest.swift in Sources */,
 				2F1393A223A9DAE00077F44E /* SettingRootView.swift in Sources */,
 				2F01CBDE23A8642000FD1AEA /* PokeMaster.xcdatamodeld in Sources */,
 				2F13939223A8ABED0077F44E /* PokemonList.swift in Sources */,

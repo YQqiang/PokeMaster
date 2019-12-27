@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Combine
 
 protocol AppCommand {
     func execute(in store: Store)
@@ -57,5 +58,32 @@ struct RegisterAppCommand: AppCommand {
         }, receiveValue: { (user) in
             store.dispatch(.accountBehaviorDone(result: .success(user)))
         })
+    }
+}
+
+struct LoadAbilitiesCommand: AppCommand {
+    let pokemon: Pokemon
+    
+    func load(pokemonAbility: Pokemon.AbilityEntry, in store: Store) -> AnyPublisher<AbilityViewModel, AppError> {
+        if let value = store.appState.pokemonList.abilities?[pokemonAbility.id.extractedID!] {
+            return Just(value)
+                .setFailureType(to: AppError.self)
+                .eraseToAnyPublisher()
+        } else {
+            return LoadAbilityRequest(pokemonAbilityEntry: pokemonAbility).publish
+        }
+    }
+    
+    func execute(in store: Store) {
+        _ = pokemon.abilities
+            .map({ load(pokemonAbility: $0, in: store)})
+            .zipAll
+            .sink(receiveCompletion: { (completion) in
+                if case .failure(let error) = completion {
+                    store.dispatch(.loadPokemonsDone(result: .failure(error)))
+                }
+            }, receiveValue: { (value) in
+                store.dispatch(.loadAbilitiesDone(result: .success(value)))
+            })
     }
 }

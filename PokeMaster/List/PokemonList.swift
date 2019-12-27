@@ -28,6 +28,7 @@ struct PokemonList: View {
                 )
                 .onTapGesture {
                     self.store.dispatch(.toggleListSelection(index: pokemon.id))
+                    self.store.dispatch(.loadAbilities(pokemon: pokemon.pokemon))
                 }
             }
         }

@@ -143,5 +143,14 @@ extension AppState {
             }
             return pokemons.sorted { $0.id < $1.id }
         }
+        
+        /// 按 ID 缓存所有的 AbilityViewModel
+        var abilities: [Int: AbilityViewModel]?
+        
+        /// 返回 某个 Pokemon 的所有技能的 AbilityViewModel
+        /// - Parameter pokemon: pokemon
+        func abilityViewModel(_ pokemon: Pokemon) -> [AbilityViewModel]? {
+            return []
+        }
     }
 }
