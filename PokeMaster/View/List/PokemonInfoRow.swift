@@ -12,6 +12,7 @@ import KingfisherSwiftUI
 struct PokemonInfoRow: View {
     
     @EnvironmentObject var store: Store
+    @State var isSFViewActive = false
     
     let model: PokemonViewModel
     let expanded: Bool
@@ -50,9 +51,12 @@ struct PokemonInfoRow: View {
                     Image(systemName: "chart.bar")
                         .modifier(ToolButtonModifier())
                 }
-                Button(action: {print("Web")}) {
+                NavigationLink(destination: SafariView(url: model.detailPageURL, onFinished: {
+                    self.isSFViewActive = false
+                    })
+                    .navigationBarTitle(Text(model.name), displayMode: .inline), isActive: $isSFViewActive) {
                     Image(systemName: "info.circle")
-                    .modifier(ToolButtonModifier())
+                        .modifier(ToolButtonModifier())
                 }
             }
             .padding(.bottom, 12)
