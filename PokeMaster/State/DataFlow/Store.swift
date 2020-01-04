@@ -120,6 +120,9 @@ class Store: ObservableObject {
             
         case .togglePanelPresenting(presenting: let presenting):
             appState.pokemonList.selectionState.panelPresented = presenting
+            
+        case .closeSFView:
+            appState.pokemonList.isSFViewActive = false
         }
         return (appState, appCommand)
     }

@@ -159,5 +159,7 @@ extension AppState {
             return pokemon.abilities.compactMap { abilities[$0.ability.url.extractedID!]
             }
         }
+        
+        var isSFViewActive = false
     }
 }

@@ -29,5 +29,5 @@ enum AppAction {
     
     case loadAbilities(pokemon: Pokemon)
     case loadAbilitiesDone(result: Result<[AbilityViewModel], AppError>)
-    
+    case closeSFView
 }
